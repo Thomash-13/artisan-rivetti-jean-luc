@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo Artisan Peintre Jean-Luc Rivetti">
+  <defs>
+    <clipPath id="eclat">
+      <path d="M60 4 L69 15 L80 8 L84 22 L97 19 L95 33 L109 34 L101 46 L114 51 L103 60
+               L114 69 L101 74 L109 86 L95 87 L97 101 L84 98 L80 112 L69 105 L60 116
+               L51 105 L40 112 L36 98 L23 101 L25 87 L11 86 L19 74 L6 69 L17 60
+               L6 51 L19 46 L11 34 L25 33 L23 19 L36 22 L40 8 L51 15 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#eclat)">
+    <path d="M60 60 L60 0 L120 0 L120 60 Z" fill="#E4404F"/>
+    <path d="M60 60 L120 60 L120 120 L60 120 Z" fill="#F5C82E"/>
+    <path d="M60 60 L60 120 L0 120 L0 78 Z" fill="#4FC3E8"/>
+    <path d="M60 60 L0 78 L0 26 Z" fill="#2C6FC4"/>
+    <path d="M60 60 L0 26 L0 0 L60 0 Z" fill="#A566CE"/>
+  </g>
+  <g>
+    <path d="M28 60 C40 44 80 44 92 60 C80 76 40 76 28 60 Z" fill="#FBFAF7" stroke="#17233A" stroke-width="3.2" stroke-linejoin="round"/>
+    <circle cx="60" cy="60" r="12.5" fill="#2C6FC4" stroke="#17233A" stroke-width="2.4"/>
+    <circle cx="60" cy="60" r="5.6" fill="#17233A"/>
+    <circle cx="64.6" cy="55.6" r="2.5" fill="#FBFAF7" opacity=".92"/>
+  </g>
+</svg>
