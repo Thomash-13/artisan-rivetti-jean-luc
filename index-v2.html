@@ -114,7 +114,7 @@ nav.main a:hover{color:var(--bleu)}
 
 
 /* ===== Bande de confiance ===== */
-.confiance{background:var(--blanc);border-top:1px solid rgba(35,39,43,.08);border-bottom:1px solid rgba(35,39,43,.08)}
+.confiance{position:relative;background:var(--blanc);border-top:1px solid rgba(35,39,43,.08);border-bottom:1px solid rgba(35,39,43,.08)}
 .confiance ul{list-style:none;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;max-width:1080px;margin:0 auto}
 .confiance li{font-weight:600;font-size:14px;letter-spacing:.04em;color:var(--bleu);display:flex;align-items:center;gap:9px}
 .confiance li::before{content:"";width:8px;height:8px;background:var(--bleu);border-radius:50%;flex:none;opacity:.5}
@@ -243,7 +243,10 @@ footer.site ul a:hover{color:var(--blanc)}
   .section{padding:60px 0}
   .hero h1{font-size:clamp(30px,8.6vw,38px)}
   .hero-tel{font-size:24px}
-  .confiance ul{gap:10px 20px;justify-content:flex-start}
+  .confiance ul{flex-wrap:nowrap;justify-content:flex-start;gap:24px;padding:18px 24px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .confiance ul::-webkit-scrollbar{display:none}
+  .confiance li{flex:none;white-space:nowrap;scroll-snap-align:start}
+  .confiance::after{content:"";position:absolute;top:0;right:0;bottom:0;width:36px;background:linear-gradient(to right,transparent,var(--blanc));pointer-events:none}
   .frow{grid-template-columns:1fr}
   .call-fab .num{display:none}
   .call-fab{padding:16px}
