@@ -123,7 +123,10 @@ nav.main a:hover{color:var(--bleu)}
 .confiance li{font-weight:600;font-size:14px;letter-spacing:.04em;color:var(--bleu);display:flex;align-items:center;gap:9px}
 .confiance li::before{content:"";width:8px;height:8px;background:var(--bleu);border-radius:50%;flex:none;opacity:.5}
 .confiance-track{display:contents}
-.confiance-copy{display:none}
+/* `ul.confiance-copy` et non `.confiance-copy` seul : `.confiance ul{display:flex}`
+   est plus spécifique qu'une classe, la copie s'affichait donc sur ordinateur et
+   la bande de confiance apparaissait en double. */
+.confiance ul.confiance-copy{display:none}
 @keyframes confiance-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ===== Sections ===== */
@@ -238,7 +241,7 @@ footer.site ul a:hover{color:var(--blanc)}
   .mobile-panel ul{list-style:none;display:flex;flex-direction:column}
   .mobile-panel li{border-bottom:1px solid rgba(35,39,43,.1)}
   .mobile-panel a{display:block;text-decoration:none;color:var(--encre);font-family:var(--f-display);font-size:27px;padding:15px 0}
-  .mobile-panel .cta{margin-top:26px;text-align:center;font-size:17px;font-family:var(--f-body);padding:15px}
+  .mobile-panel .cta{margin-top:26px;text-align:center;font-size:17px;font-family:var(--f-body);padding:15px;color:var(--blanc)}
   .hero{padding:calc(var(--header-h) + 40px) 0 56px}
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .mur{min-height:0;padding:36px 30px 32px}
@@ -256,7 +259,7 @@ footer.site ul a:hover{color:var(--blanc)}
   .confiance-track{display:flex;width:max-content;animation:confiance-marquee 26s linear infinite}
   .confiance ul{flex-wrap:nowrap;justify-content:flex-start;gap:24px;padding:18px 24px;max-width:none;margin:0}
   .confiance li{flex:none;white-space:nowrap}
-  .confiance-copy{display:flex}
+  .confiance ul.confiance-copy{display:flex}
   .confiance::after{content:"";position:absolute;top:0;right:0;bottom:0;width:36px;background:linear-gradient(to right,transparent,var(--blanc));pointer-events:none}
   .frow{grid-template-columns:1fr}
   .call-fab .num{display:none}
