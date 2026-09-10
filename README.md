@@ -80,3 +80,16 @@ Si Redouan… si **Jean-Luc** valide l'idée, générer via ChatGPT (méthode du
 - `robots.txt` en Allow + vraie URL sitemap + soumission Search Console
 - SIRET/prénom confirmés dans les mentions légales, assureur décennale
 - Et le vrai levier de sa demande : **revendiquer et remplir sa fiche Google** (brique de la grille, 149 €). Tout le dossier commercial (script du RDV, benchmark, offre) est dans `livrables/prospection/3-dossiers-prospects/rivetti-peintre/`
+
+## Maj 10/09/2026 : retouches post-appel + bascule du domaine
+
+**Domaine choisi et acheté : `rivetti-peinture.fr`** (LWS). Bascule des nameservers vers Cloudflare lancée le 10/09 pendant l'appel (Thomas connecté sur son panneau LWS), enregistrements mail vérifiés et laissés en DNS only avant bascule. Reste après propagation : relier le domaine au projet Pages (Custom domains, `rivetti-peinture.fr` + `www`), puis retirer le `noindex` et repasser `robots.txt` en Allow.
+
+**Retouches demandées par Jean-Luc au téléphone, appliquées le même jour** (poussées sur `main`, en ligne sur `artisan-rivetti-jean-luc.pages.dev`) :
+- Hero recentré sur 5 communes au lieu de 3 (**Martigues, Carry-le-Rouet, Sausset-les-Pins, Châteauneuf-lès-Martigues, Istres** — Port-de-Bouc et Fos-sur-Mer sortent des tags de zone, gardés uniquement comme adresse/base), H1 simplifié en « Jean-Luc Rivetti, artisan peintre décorateur » (sans ville), accroche du hero raccourcie (phrase « artisan indépendant... depuis 2000 » retirée), wordmark de l'en-tête passé de « Peintre en bâtiment » à « Artisan peintre »
+- Section L'artisan allégée : titre H2 retiré, le pavé « depuis avril 2000... » et la citation cliente retirés, ne reste qu'une phrase sur les techniques ; **zone passée de 50 à 30 km**
+- Prestations : **« Application au pistolet » et « Accompagnement déco » retirées** (galerie + formulaire de contact)
+- Avis : lien changé en « Voir tous les avis sur Google » (au lieu du nombre)
+- Contact : liste des zones d'intervention alignée sur les 5 communes du hero
+- **Cohérence invisible corrigée en même temps** : meta description, JSON-LD (HousePainter + FAQPage) et FAQ affichée mettaient encore les anciennes villes, le 50 km et « application au pistolet » — recalés partout pour ne pas contredire le reste de la page
+- **`index-v2.html` (version hero photo IA) n'a pas été retouchée** : à vérifier si elle est encore utile ou à archiver, elle contredit maintenant `index.html` (ancien H1, anciennes villes)
