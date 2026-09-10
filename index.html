@@ -217,6 +217,8 @@ textarea{min-height:110px;resize:vertical}
 form .cta{width:100%;text-align:center;font-size:16.5px;padding:14px}
 .form-msg{display:none;margin-top:16px;background:#E3EAF2;color:var(--bleu-fonce);padding:14px 16px;font-weight:500;font-size:15px}
 .form-msg.on{display:block}
+.form-msg.ok{background:#E3EDE5;color:#276A45}
+.form-msg.ko{background:#F3E1DF;color:#A3251C}
 
 /* ===== Footer ===== */
 footer.site{background:var(--encre);color:#C6C9CC;padding:56px 0 32px}
@@ -589,7 +591,7 @@ footer.site ul a:hover{color:var(--blanc)}
             <textarea id="fMsg" name="message" placeholder="Décrivez les pièces ou les surfaces à peindre…" required></textarea>
           </div>
           <button class="cta" type="submit">Demander mon devis gratuit</button>
-          <p class="form-msg" id="formMsg" role="status">Merci ! Le formulaire sera activé à la mise en ligne du site. En attendant, le plus simple est d'appeler le 06 09 57 04 70.</p>
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -637,6 +639,7 @@ footer.site ul a:hover{color:var(--blanc)}
   <span class="num">06 09 57 04 70</span>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function(){
   var header = document.getElementById('header');
@@ -686,12 +689,41 @@ footer.site ul a:hover{color:var(--blanc)}
     if(e.key === 'Escape' && panel.classList.contains('open')){ closePanel(); burger.focus(); }
   });
 
-  /* Formulaire (démonstration honnête tant que l'envoi n'est pas branché) */
+  /* Formulaire de contact (EmailJS) */
+  var EMAILJS_PUBLIC_KEY = '5U3PXhlfG4qlig5sJ';
+  var EMAILJS_SERVICE_ID = 'service_niu331q';
+  var EMAILJS_TEMPLATE_ID = 'TEMPLATE_A_CREER'; /* creer le template EmailJS (To Email = jeanlucrivetti@gmail.com, Reply To = {{email}}, Bcc = contact@thomdigital.fr) puis remplacer par son id template_xxxxxxx */
+
   var form = document.getElementById('contactForm');
+  var formMsg = document.getElementById('formMsg');
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var envoiPret = (typeof emailjs !== 'undefined') && EMAILJS_TEMPLATE_ID.indexOf('template_') === 0;
+  if(envoiPret){ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }
+
+  function afficherMsg(texte, etat){
+    formMsg.textContent = texte;
+    formMsg.className = 'form-msg on' + (etat ? ' ' + etat : '');
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if(!form.checkValidity()){ form.reportValidity(); return; }
-    document.getElementById('formMsg').classList.add('on');
+    if(!envoiPret){
+      afficherMsg("Le formulaire n'est pas encore actif. Le plus simple est d'appeler le 06 09 57 04 70.");
+      return;
+    }
+    var libelle = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form).then(function(){
+      form.reset();
+      afficherMsg('Demande envoyée. Je vous rappelle rapidement pour organiser la visite.', 'ok');
+    }).catch(function(){
+      afficherMsg("L'envoi a échoué. Appelez directement le 06 09 57 04 70.", 'ko');
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = libelle;
+    });
   });
 })();
 </script>
