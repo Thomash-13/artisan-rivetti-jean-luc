@@ -127,6 +127,8 @@ nav.main a:hover{color:var(--bleu)}
 .confiance ul{list-style:none;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;max-width:1080px;margin:0 auto}
 .confiance li{font-weight:600;font-size:14px;letter-spacing:.04em;color:var(--bleu);display:flex;align-items:center;gap:9px}
 .confiance li::before{content:"";width:8px;height:8px;background:var(--bleu);border-radius:50%;flex:none;opacity:.5}
+.confiance li a{color:inherit;text-decoration:none}
+.confiance li a:hover{text-decoration:underline}
 .confiance-track{display:contents}
 /* `ul.confiance-copy` et non `.confiance-copy` seul : `.confiance ul{display:flex}`
    est plus spécifique qu'une classe, la copie s'affichait donc sur ordinateur et
@@ -370,14 +372,14 @@ footer.site ul a:hover{color:var(--blanc)}
     <div class="confiance-track">
       <ul>
         <li>Artisan depuis 2000</li>
-        <li>5,0/5 sur Google</li>
+        <li><a href="#avis">5,0/5 sur Google</a></li>
         <li>Particuliers &amp; professionnels</li>
         <li>Décoration &amp; techniques anciennes</li>
         <li>Devis gratuit</li>
       </ul>
       <ul class="confiance-copy" aria-hidden="true">
         <li>Artisan depuis 2000</li>
-        <li>5,0/5 sur Google</li>
+        <li><a href="#avis">5,0/5 sur Google</a></li>
         <li>Particuliers &amp; professionnels</li>
         <li>Décoration &amp; techniques anciennes</li>
         <li>Devis gratuit</li>
@@ -409,7 +411,7 @@ footer.site ul a:hover{color:var(--blanc)}
           <dt>Zone</dt>
           <dd>30 km autour de l'étang de Berre</dd>
           <dt>Note Google</dt>
-          <dd>5,0 sur 5</dd>
+          <dd><a href="#avis">5,0 sur 5</a></dd>
         </dl>
         </div>
       </div>
@@ -594,7 +596,7 @@ footer.site ul a:hover{color:var(--blanc)}
     <div class="foot-grid">
       <div class="foot-brand">
         <b>Rivetti</b>
-        <p>Jean-Luc Rivetti, peintre en bâtiment et décorateur<br>Port-de-Bouc · Martigues (13)</p>
+        <p>Jean-Luc Rivetti, artisan peintre décorateur<br>Basé à Port-de-Bouc (13)</p>
         <p><a href="tel:+33609570470">06 09 57 04 70</a><br><a href="mailto:jeanlucrivetti@gmail.com">jeanlucrivetti@gmail.com</a></p>
       </div>
       <div>
