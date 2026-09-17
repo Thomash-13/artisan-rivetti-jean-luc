@@ -1,0 +1,5 @@
+# Cloudflare Pages sert tout le depot : notes internes et anciennes versions renvoyees vers l'accueil.
+# Chaque fichier existe aussi sans extension (/index-v2), d'ou une regle pour les deux formes.
+/README.md / 301
+/index-v2.html / 301
+/index-v2 / 301
