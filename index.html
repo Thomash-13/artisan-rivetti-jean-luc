@@ -554,6 +554,8 @@ footer.site ul a:hover{color:var(--blanc)}
           </div>
         </div>
         <form id="contactForm" novalidate>
+          <input type="hidden" name="to_email" value="jeanlucrivetti@gmail.com">
+          <input type="hidden" name="from_name" value="Site Rivetti Peinture">
           <div class="frow">
             <div class="fgroup">
               <label for="fPrenom">Prénom</label>
@@ -693,7 +695,7 @@ footer.site ul a:hover{color:var(--blanc)}
   /* Formulaire de contact (EmailJS) */
   var EMAILJS_PUBLIC_KEY = '5U3PXhlfG4qlig5sJ';
   var EMAILJS_SERVICE_ID = 'service_niu331q';
-  var EMAILJS_TEMPLATE_ID = 'template_htiau9n'; /* To Email = jeanlucrivetti@gmail.com, Reply To = {{email}}, Bcc = contact@thomdigital.fr */
+  var EMAILJS_TEMPLATE_ID = 'template_oehb01z'; /* modèle générique partagé (To Email = {{to_email}}), destinataire fixé ici par le champ caché to_email = jeanlucrivetti@gmail.com */
 
   var form = document.getElementById('contactForm');
   var formMsg = document.getElementById('formMsg');
