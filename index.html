@@ -48,6 +48,8 @@
 }
 </script>
 <style>
+/* deux appuis rapprochés déclenchaient le zoom de Safari (flèches et photo de la visionneuse) : le double tap est coupé, le pincement reste */
+a,button,summary,label,[role="dialog"],[role="dialog"] *,#lightbox,#lightbox *{touch-action:manipulation}
 :root{
   --souscouche:#F6F4EF;
   --blanc:#FDFCFA;
